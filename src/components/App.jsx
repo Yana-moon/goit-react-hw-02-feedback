@@ -13,7 +13,6 @@ export class App extends Component {
     bad: 0,
   };
 
-  buttons = Object.keys(this.state);
 
   handleIncrement = stateName => {
     this.setState(prevState => ({
@@ -34,7 +33,7 @@ export class App extends Component {
       <Wrapper>
         <Section title="Please leave feedback">
           <FeedbackOptions
-            options={this.buttons}
+            options={Object.keys(this.state)}
             onLeaveFeedback={this.handleIncrement}
           />
         </Section>
